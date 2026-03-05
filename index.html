@@ -1,49 +1,245 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-  </head>
-  <body>
-    <header>
-      <h1>Image Gallery</h1>
-      <div class="categories">
-        <button class="filter-btn" data-category="all">All</button>
-        <button class="filter-btn" data-category="nature">Nature</button>
-        <button class="filter-btn" data-category="architecture">
-          Architecture
-        </button>
-        <button class="filter-btn" data-category="animals">Animals</button>
-      </div>
-    </header>
-    <section class="Gallery">
-      <div class="gallery-item" data-category="nature">
-        <img src="" alt="Nature" />
-      </div>
-      <div class="gallery-item" data-category="nature">
-        <img src="" alt="Nature" />
-      </div>
-      <div class="gallery-item" data-category="nature">
-        <img src="" alt="Nature" />
-      </div>
-      <div class="gallery-item" data-category="nature">
-        <img src="" alt="Nature" />
-      </div>
-      <div class="gallery-item" data-category="nature">
-        <img src="" alt="Nature" />
-      </div>
-      <div class="gallery-item" data-category="nature">
-        <img src="" alt="Nature" />
-      </div>
 
-      <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox" src="" alt="">
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina | The Grand Nature Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fallback for broken images */
+    .gallery-item img.error {
+      display: none;
+    }
+  </style>
+</head>
 
-    </section>
-  </body>
+<body>
+  <header>
+    <span class="sub-title"
+      style="display:block; text-transform:uppercase; letter-spacing:0.4em; font-size:0.7rem; color:var(--accent-color); margin-bottom:1rem; font-weight:700; text-align:center;">Ultimate
+      Curated Collection</span>
+    <h1 style="text-align:center;">Infinite Horizons</h1>
+    <div class="categories">
+      <button class="filter-btn active" data-category="all">The Gallery</button>
+      <button class="filter-btn" data-category="nature">Nature</button>
+      <button class="filter-btn" data-category="landscape">Landscape</button>
+      <button class="filter-btn" data-category="water">Aquatic</button>
+    </div>
+  </header>
+
+  <main class="gallery-container" id="gallery">
+    <!-- 1. Amber Lake -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+        alt="Lake Sunset" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Amber Lake</h3>
+      </div>
+    </div>
+
+    <!-- 2. Frosty Peaks -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"
+        alt="Snowy Mountains" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Frosty Peaks</h3>
+      </div>
+    </div>
+
+    <!-- 3. Misty Woodlands -->
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"
+        alt="Misty Forest" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Nature</span>
+        <h3>Misty Woodlands</h3>
+      </div>
+    </div>
+
+    <!-- 4. Golden Gorge -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+        alt="Canyon View" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Golden Gorge</h3>
+      </div>
+    </div>
+
+    <!-- 5. Highland Ridge -->
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80"
+        alt="Mountain Range" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Nature</span>
+        <h3>Highland Ridge</h3>
+      </div>
+    </div>
+
+    <!-- 6. Rural Bliss -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+        alt="Countryside" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Rural Bliss</h3>
+      </div>
+    </div>
+
+    <!-- 7. Crystal Current -->
+    <div class="gallery-item" data-category="water">
+      <img src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?auto=format&fit=crop&w=1200&q=80"
+        alt="Flowing River" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Water</span>
+        <h3>Crystal Current</h3>
+      </div>
+    </div>
+
+    <!-- 8. Path to Horizon -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80"
+        alt="Valley Road" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Path to Horizon</h3>
+      </div>
+    </div>
+
+    <!-- 9. Emerald Falls -->
+    <div class="gallery-item" data-category="water">
+      <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80"
+        alt="Water Cascade" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Water</span>
+        <h3>Emerald Falls</h3>
+      </div>
+    </div>
+
+    <!-- 10. Sunbeam Canopy -->
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80"
+        alt="Forest Light" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Nature</span>
+        <h3>Sunbeam Canopy</h3>
+      </div>
+    </div>
+
+    <!-- 11. Deep Woods -->
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=1200&q=80"
+        alt="Deep Forest" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Nature</span>
+        <h3>Deep Woods</h3>
+      </div>
+    </div>
+
+    <!-- 12. Urban Twilight -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1200&q=80"
+        alt="City at Sunset" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Urban Twilight</h3>
+      </div>
+    </div>
+
+    <!-- 13. Serene Meadow -->
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1200&q=80"
+        alt="Peaceful Field" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Nature</span>
+        <h3>Serene Meadow</h3>
+      </div>
+    </div>
+
+    <!-- 14. Alpine Crest -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+        alt="Alpine Peaks" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Alpine Crest</h3>
+      </div>
+    </div>
+
+    <!-- 15. Tropical Haven -->
+    <div class="gallery-item" data-category="water">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+        alt="Tropical Beach" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Water</span>
+        <h3>Tropical Haven</h3>
+      </div>
+    </div>
+
+    <!-- 16. Vivid Twilight -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=1200&q=80"
+        alt="Sunset Sky" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Vivid Twilight</h3>
+      </div>
+    </div>
+
+    <!-- 17. Mirror Basin -->
+    <div class="gallery-item" data-category="water">
+      <img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1200&q=80"
+        alt="Mirror Basin" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Water</span>
+        <h3>Mirror Basin</h3>
+      </div>
+    </div>
+
+    <!-- 18. Jungle Waters (NEW) -->
+    <div class="gallery-item" data-category="water">
+      <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80"
+        alt="Jungle River" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Water</span>
+        <h3>Jungle Waters</h3>
+      </div>
+    </div>
+
+    <!-- 19. Verdant Path -->
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?auto=format&fit=crop&w=1200&q=80"
+        alt="Forest Path" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Nature</span>
+        <h3>Verdant Path</h3>
+      </div>
+    </div>
+
+    <!-- 21. Azure Valley -->
+    <div class="gallery-item" data-category="landscape">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80"
+        alt="Valley View" onerror="this.parentElement.style.display='none'">
+      <div class="item-overlay">
+        <span class="item-category">Landscape</span>
+        <h3>Azure Valley</h3>
+      </div>
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn">&times;</span>
+    <button class="nav-btn prev-btn">&#10094;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-image">
+    </div>
+    <button class="nav-btn next-btn">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
